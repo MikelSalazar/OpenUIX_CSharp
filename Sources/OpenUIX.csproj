@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14" DefaultTarget="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)$\(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)$\(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99B90528-98AB-4552-B5AB-CBC8E9C73A83}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OpenUIX</RootNamespace>
+    <AssemblyName>OpenUIX</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Binaries\Library\Debug\</OutputPath>
+    <BaseIntermediateOutputPath>..\Binaries\Library\Obj\Debug\</BaseIntermediateOutputPath>
+    <DocumentationFile>..\Documentation\Library\OpenUIX.XML</DocumentationFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Documentation\Library\OpenUIX.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Binaries\Library\Release\</OutputPath>
+    <BaseIntermediateOutputPath>..\Binaries\Library\Obj\Release\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Collections\Dictionary.cs" />
+    <Compile Include="Data\Collections\List.cs" />
+    <Compile Include="Data\Collections\NodeSet.cs" />
+    <Compile Include="Data\Collections\Queue.cs" />
+    <Compile Include="Data\Collections\Stack.cs" />
+    <Compile Include="Data\Document.cs" />
+    <Compile Include="Data\Node.cs" />
+    <Compile Include="Data\NodePath.cs" />
+    <Compile Include="Data\NodeType.cs" />
+    <Compile Include="Logic\Condition.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="OpenUIX.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Model\" />
+    <Folder Include="Data\Serialization\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
